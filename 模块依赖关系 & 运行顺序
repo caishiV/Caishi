@@ -1,0 +1,7 @@
+1. 先启动 Neo4j 数据库，导入测试数据
+​
+2. 放置轻量化基座模型到  ./base_model 
+​
+3. 执行： python main_server.py  启动整套服务
+​
+4. 使用 WebSocket 工具连接  ws://127.0.0.1:8000/ws/humanoid  交互
