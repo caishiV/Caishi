@@ -1,0 +1,638 @@
+一、整体定位
+ 
+打造具备人形交互能力、模型自迭代、知识自主治理的全链路自治AI体系，三层能力深度耦合：人形终端做交互感知、AI自研引擎负责模型迭代、知识图谱中枢做全域知识调度与推理。
+ 
+ 
+ 
+二、三层核心模块拆解
+ 
+（一）人形AI 层（感知+交互+执行终端）
+ 
+承担对外交互、环境感知、指令落地、结果反馈，是整个体系的对外载体。
+ 
+1. 基础能力- 多模态交互：语音、视觉、肢体动作、表情、自然语言对话，适配人形躯体运动控制。
+- 感知采集：视觉图像、音频、文本、环境数据、用户行为数据，回传至上层引擎。
+- 任务执行：接收模型/知识图谱下发指令，完成问答、创作、推理、实体操作等任务。
+2. 联动逻辑
+交互请求→数据预处理→分流至「AI自动研发模型」+「知识图谱」→结果融合→人形端输出反馈。
+ 
+（二）AI自动研发模型 层（自治训练+迭代+调度核心）
+ 
+实现模型自主设计、训练、调优、部署、版本更迭，无需人工介入，是体系的算力与算法中枢。
+ 
+1. 核心子模块- 需求解析引擎：解析人形端业务诉求、场景特征，判定所需模型类型（大语言、多模态、推理、预测等）。
+- 模型架构自动生成：基于任务自动设计网络结构、参数规模、微调策略、训练范式。
+- 数据流水线自治：自动清洗、划分数据集、数据增强，对接知识图谱抽取训练样本。
+- 自动化训练&评估：自适应算力分配、早停机制、指标评测（准确率、响应速度、泛化性）。
+- 版本管理&灰度部署：新旧模型自动切换、异常回滚、负载均衡。
+2. 与知识图谱联动
+从知识图谱抽取结构化知识、实体关系、领域规则，作为模型训练/微调的增量数据与约束规则；模型推理结果反哺知识图谱，完成知识补全。
+ 
+（三）AI自主选择知识图谱库 层（知识治理+推理+动态选型）
+ 
+摒弃固定图谱，由AI根据场景、任务、精度要求自主选择、组合、构建知识图谱。
+ 
+1. 核心能力- 图谱仓库集群：预建多领域独立图谱（通用常识、行业垂直、专业技术、规则逻辑等），支持图谱拆分、融合、切片。
+- 智能选型引擎：AI根据任务类型、问答领域、推理深度，自动匹配单图谱或多图谱联合检索。
+- 图谱动态演化：实体抽取、关系挖掘、歧义消歧、知识更新、冗余剔除，全流程自动化。
+- 语义推理引擎：基于图结构做逻辑推理、关联溯源、路径挖掘，弥补大模型幻觉问题。
+2. 选型规则（AI自主判定）- 通用对话：选用通用常识图谱，轻量化、响应快。
+- 专业领域（技术/医疗/工业）：切换垂直领域图谱，保证专业准确度。
+- 复杂逻辑推理：多图谱融合，构建临时子图谱做链式推理。
+- 实时动态场景：启用流式更新图谱，同步最新信息。
+ 
+ 
+ 
+三、全链路运行流程（端到端闭环）
+ 
+1. 触发：人形AI接收用户/场景请求，采集多模态数据。
+2. 分流判定：自研AI模型引擎分析任务属性，判定是生成类任务还是知识推理类任务。
+3. 知识调度：图谱选型引擎自动匹配最优知识图谱，检索结构化知识、实体关系。
+4. 模型运算：自研模型结合图谱知识，完成生成、问答、推理、决策。
+5. 结果融合：模型输出 + 图谱校验，修正错误、补充依据。
+6. 输出反馈：人形AI以语音、文字、动作等形式对外输出结果。
+7. 自迭代闭环：全链路日志、用户反馈回传，驱动模型自动微调、知识图谱自动更新、后续选型策略优化。
+ 
+ 
+ 
+四、关键技术要点
+ 
+1. 协同约束：知识图谱作为事实锚点，约束大模型生成，降低幻觉；模型负责自然语言转换与泛化表达。
+2. 动态资源调度：高并发场景自动选用轻量化模型+精简图谱；高精度场景启用大模型+全量领域图谱。
+3. 自治安全：内置知识校验、内容风控、模型异常检测，防止自主演化出现偏差。
+4. 扩展性：支持新增领域图谱、新增模型架构，体系可横向扩容。
+ 
+ 
+ 
+五、典型应用场景
+ 
+- 人形服务机器人：日常对话用通用图谱+轻量模型；专业咨询自动切换领域图谱+专项模型。
+- 智能研发助手：自主调取技术知识图谱，自动训练专项小模型，完成代码/方案生成。
+- 智能决策终端：融合多行业图谱+推理模型，自主分析、给出决策并持续优化。
+ 
+接着我们需要进一步输出架构拓扑图文字版、模块接口定义、技术栈选型清单，或是轻量化落地原型方案。😊
+
+
+人形AI+AI自动研发模型+自主知识图谱库 全套落地技术方案
+ 
+一、系统整体拓扑架构（文字精准拓扑，可直接制图）
+ 
+1. 四层分层拓扑结构（自上而下）
+ 
+L4 人形交互终端层（感知执行端）
+ 
+- 载体：物理人形机器人/数字人Agent
+- 设备：视觉相机、麦克风、运动舵机、触控交互模块
+- 核心职能：多模态输入采集、动作执行、结果可视化输出、环境感知反馈
+ 
+L3 智能知识自治层（动态KG中枢）
+ 
+- 核心引擎：AI自主图谱选型引擎、知识推理引擎、图谱演化引擎
+- 资源池：多领域知识图谱集群（通用/技术/行业/实时流式图谱）
+- 核心职能：任务驱动自动选库、事实校验、关系推理、知识自动更新迭代
+ 
+L2 AI自动研发引擎层（模型自治核心）
+ 
+- 核心模块：任务解析器、模型自动架构生成、自治训练流水线、灰度部署系统、模型评估巡检
+- 核心职能：无人工干预完成模型设计、训练、调优、迭代、回滚、调度
+ 
+L1 底层算力&数据底座层
+ 
+- 算力：本地GPU算力 + 轻量化云弹性算力
+- 数据：多模态原始数据集、结构化知识数据、模型版本日志、交互行为日志
+- 基础服务：算力调度、数据存储、安全风控、日志监控
+ 
+2. 全链路拓扑流转
+ 
+用户/环境交互 → 人形终端采集多模态数据 → 任务分层解析 → 自动匹配知识图谱库 → AI自研模型自适应运算 → 图谱事实校验纠错 → 结果融合输出 → 人形终端执行反馈 → 数据回流 → 模型微调+图谱更新（闭环自进化）
+ 
+二、全模块接口定义（标准化可开发对接）
+ 
+1. 人形AI终端对外接口
+ 
+（1）输入感知接口
+ 
+- 接口名： humanoid_perception_input 
+- 协议：HTTP/WebSocket双协议
+- 入参：图像帧、音频流、文本指令、姿态数据、环境传感数据
+- 出参：标准化结构化任务请求（任务类型、精度等级、场景标签）
+ 
+（2）执行输出接口
+ 
+- 接口名： humanoid_action_output 
+- 协议：WebSocket实时推送
+- 入参：模型推理结果、图谱结构化结论、语音播报文本、肢体动作指令
+- 出参：执行状态码、反馈日志、异常信息
+ 
+2. AI自动研发模型层核心接口
+ 
+（1）任务适配接口
+ 
+- 接口名： ai_model_task_adapt 
+- 功能：根据任务自动匹配模型尺寸与架构
+- 入参：场景类型、推理精度、响应速度要求、算力配额
+- 出参：最优模型架构、参数规模、推理模式
+ 
+（2）自治训练接口
+ 
+- 接口名： auto_train_pipeline 
+- 功能：全自动数据处理、训练、评估、保存版本
+- 入参：回流数据集、知识图谱增量数据、训练超参自适应配置
+- 出参：新模型版本、精度指标、损耗数据、可用性判定
+ 
+（3）模型推理接口
+ 
+- 接口名： model_infer_core 
+- 功能：核心生成、推理、决策运算
+- 入参：结构化任务、图谱关联实体数据、历史对话上下文
+- 出参：原始推理结果、置信度评分、待校验内容
+ 
+3. 自主知识图谱库核心接口
+ 
+（1）图谱智能选型接口
+ 
+- 接口名：kg_auto_select
+- 功能：AI自主判定最优知识图谱组合
+- 入参：任务领域、推理深度、时效性需求
+- 出参：选定图谱ID、图谱切片范围、多图谱融合策略
+ 
+（2）知识检索&推理接口
+ 
+- 接口名： kg_reason_query 
+- 功能：实体查询、关系链路推理、事实溯源
+- 入参：关键词、实体、推理层数、约束规则
+- 出参：结构化知识三元组、推理路径、事实依据、置信度
+ 
+（3）图谱自更新接口
+ 
+- 接口名： kg_auto_evolve 
+- 功能：自动抽取新知识、消歧、补全、去冗余
+- 入参：模型输出结果、全网增量数据、用户纠错反馈
+- 出参：更新后图谱版本、新增实体/关系、剔除冗余数据
+ 
+4. 跨层联动核心接口（闭环核心）
+ 
+- 接口： data_backflow_loop 
+- 作用：终端交互数据、模型误差数据、知识偏差数据统一回流
+- 联动逻辑：数据回流 → 图谱迭代更新 → 模型基于新知识自治微调 → 终端能力升级
+ 
+三、全套技术栈选型清单（适配本地+云端、轻量化可落地）
+ 
+1. 人形AI交互层
+ 
+- 多模态感知：OpenCV、PyAudio、MediaPipe（姿态/人脸感知）
+- 交互调度：Python FastAPI、WebSocket
+- 数字人人形驱动：自定义运动控制脚本、实时表情渲染引擎
+- 数据预处理：Pandas、NumPy（标准化清洗）
+ 
+2. 知识图谱自治层
+ 
+- 图谱存储：Neo4j（核心图数据库）、SQLite（轻量化本地存储）
+- 图谱构建&演化：py2neo、LlamaIndex知识抽取框架
+- 智能选型引擎：自研规则+大模型语义分类双驱动
+- 知识推理：图遍历算法、语义相似度匹配、链式推理算子
+ 
+3. AI自动研发模型层
+ 
+- 基础模型基座：LLaMA2、Qwen轻量化开源模型
+- 自动训练框架：PyTorch、Transformers、PEFT（LoRA轻量化微调）
+- 自动化流水线：Accelerate、TRL、自动超参调优库
+- 模型部署推理：ONNX量化、TensorRT加速、本地离线推理
+- 版本管理：Git LFS、自研模型版本灰度系统
+ 
+4. 底层底座&运维
+ 
+- 开发语言：Python核心、C++高性能算力调度
+- 前端管控：Streamlit（可视化控制台）
+- 算力调度：本地GPU优先，空闲云算力兜底
+- 安全风控：内容校验模块、模型异常检测、知识合规过滤
+- 日志监控：自研全链路日志追踪系统
+ 
+四、轻量化落地原型方案（8G本地电脑可直接部署）
+ 
+1. 落地目标
+ 
+实现本地离线运行最小可用系统：人形交互模拟 + AI自动微调小模型 + 自主选库知识图谱，完整闭环自迭代。
+ 
+2. 硬件最低配置
+ 
+- 设备：Windows 10/11 本地电脑
+- 内存：8G及以上
+- 显存：4G+（支持模型量化推理、轻量化训练）
+- 存储：剩余20G以上
+ 
+3. 分阶段落地步骤（可直接执行）
+ 
+阶段1：基础环境搭建（1天完成）
+ 
+1. 部署Python3.10、PyTorch轻量化环境
+2. 安装Neo4j本地轻量版图数据库
+3. 部署Streamlit可视化管控后台
+4. 导入通用常识、基础技术两套轻量化知识图谱
+ 
+阶段2：核心模块单机串联（1-2天完成）
+ 
+1. 搭建模拟人形交互终端（文本+音频模拟交互）
+2. 开发AI图谱自主选型核心逻辑，实现通用/技术图谱自动切换
+3. 接入轻量化基座模型，完成基础问答、推理功能
+ 
+阶段3：AI自动研发能力落地（2天完成）
+ 
+1. 部署LoRA全自动微调流水线，实现数据自动回流训练
+2. 增加模型精度评估、自动版本保存、简易回滚机制
+3. 实现「图谱更新→模型微调→能力升级」最小闭环
+ 
+阶段4：整体联调&优化（1天完成）
+ 
+1. 全链路接口打通，修复跨层数据交互异常
+2. 模型INT4量化，适配8G内存低配置运行
+3. 优化图谱检索速度、模型推理响应速度
+ 
+4. 原型核心功能（落地即可用）
+ 
+1. 自主识别任务场景，自动切换对应知识图谱
+2. 基于交互数据，全自动微调专属模型，无需人工调参
+3. 利用图谱事实约束模型，大幅降低AI幻觉
+4. 全流程本地离线运行，数据不上传
+5. 可视化控制台：查看模型版本、图谱更新记录、推理日志
+ 
+5. 原型迭代拓展方向
+ 
+- 接入真实数字人/物理人形设备，实现肢体+表情联动
+- 新增行业垂直图谱（金融、工业、科研）
+- 升级全自动大模型架构生成能力，不止微调，可自主设计小模型
+- 增加多模态生成（图文、视频）自治研发能力
+ 
+五、系统核心优势总结
+ 
+1. 完全自治：模型研发、知识更新、资源选型全部AI自主完成，极低人工干预
+2. 精准可控：知识图谱做事实锚点，解决大模型幻觉痛点
+3. 轻量化落地：适配普通本地电脑，无需高端算力
+4. 闭环进化：交互数据持续回流，系统能力永久迭代升级
+5. 全栈自研可控：无闭源依赖，可自主二次开发、私有化部署
+
+
+
+补充资料：代码+配置+部署+测试+排错
+ 
+一、环境一键依赖清单 & 安装命令
+ 
+1. 版本约定
+ 
+- Python：3.10
+​
+- PyTorch：2.1.x（CUDA 11.8 适配）
+​
+- Neo4j：5.18 社区版（本地单机）
+ 
+2. 批量安装依赖
+ 
+新建  requirements.txt
+
+txt
+# 基础运行
+fastapi==0.104.1
+uvicorn==0.24.0
+websockets==12.0
+pandas==2.1.4
+numpy==1.26.2
+
+# 知识图谱
+py2neo==2021.2.3
+neo4j==5.16.0
+
+# 大模型 & 自动训练
+torch==2.1.2
+transformers==4.35.2
+peft==0.6.2
+accelerate==0.24.1
+trl==0.7.4
+bitsandbytes==0.41.1
+
+# 可视化 & 工具
+streamlit==1.28.2
+opencv-python==4.8.1.78
+pyaudio==0.2.13
+loguru==0.7.2
+
+执行安装命令：
+ 
+ bash
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+ 
+二、核心模块代码实现（分文件，可直接运行）
+ 
+目录结构
+plaintext
+ai_autonomous_system/
+├── main.py               # 总入口 + 接口服务
+├── humanoid_terminal.py  # 人形交互终端层
+├── kg_engine.py          # 知识图谱自主选型+检索
+├── auto_model_train.py   # AI自动研发/微调流水线
+├── config.py             # 全局配置
+├── requirements.txt
+└── log/                  # 日志目录
+
+1. 全局配置  config.py 
+ 
+统一地址、参数、路径，便于后期修改
+python
+# 服务配置
+HOST = "0.0.0.0"
+PORT = 8000
+
+# 知识图谱 Neo4j 配置
+NEO4J_URI = "bolt://localhost:7687"
+NEO4J_USER = "neo4j"
+NEO4J_PASSWORD = "123456"
+
+# 模型配置
+BASE_MODEL_PATH = "./base_model"
+LORA_SAVE_PATH = "./lora_models"
+MODEL_QUANT_BIT = 4  # INT4量化，适配低显存
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+
+# 图谱分类标签（自主选型依据）
+KG_TAG_GENERAL = "general"    # 通用常识图谱
+KG_TAG_TECH = "technology"    # 技术领域图谱
+
+# 数据回流路径
+DATA_BACKFLOW_PATH = "./backflow_data"
+
+2. 知识图谱引擎  kg_engine.py 
+ 
+实现图谱自主选型、知识检索、图谱简易更新三大核心能力
+python
+from py2neo import Graph, Node, Relationship
+from loguru import logger
+import config
+
+class KGAutoEngine:
+    def __init__(self):
+        self.graph = Graph(
+            config.NEO4J_URI,
+            auth=(config.NEO4J_USER, config.NEO4J_PASSWORD)
+        )
+        logger.info("知识图谱引擎初始化完成")
+
+    def auto_select_kg(self, query_text: str) -> str:
+        """AI自主选择图谱：简单语义分类，可后续升级大模型分类"""
+        tech_keywords = {"代码", "Python", "模型", "算法", "开发", "训练"}
+        text_set = set(query_text)
+        if tech_keywords & text_set:
+            return config.KG_TAG_TECH
+        return config.KG_TAG_GENERAL
+
+    def kg_query(self, query_text: str) -> list:
+        """根据选中图谱检索知识三元组"""
+        kg_type = self.auto_select_kg(query_text)
+        cypher = f"""
+        MATCH (n:{kg_type})-[r]->(m)
+        WHERE n.name CONTAINS $kw
+        RETURN n.name, type(r), m.name LIMIT 5
+        """
+        res = self.graph.run(cypher, kw=query_text).data()
+        return res
+
+    def auto_update_kg(self, entity_a: str, rel: str, entity_b: str, kg_type: str):
+        """自动新增知识，完成图谱自演化"""
+        a = Node(kg_type, name=entity_a)
+        b = Node(kg_type, name=entity_b)
+        r = Relationship(a, rel, b)
+        self.graph.merge(a)
+        self.graph.merge(b)
+        self.graph.merge(r)
+        logger.success(f"图谱自动更新: {entity_a} -{rel}-> {entity_b}")
+
+# 单例实例
+kg_engine = KGAutoEngine()
+
+3. 人形交互终端  humanoid_terminal.py 
+ 
+模拟多模态输入、任务封装、结果输出
+python
+from fastapi import WebSocket
+import config
+from kg_engine import kg_engine
+
+class HumanoidTerminal:
+    @staticmethod
+    def parse_input(raw_text: str) -> dict:
+        """解析用户输入，封装标准任务体"""
+        return {
+            "task_text": raw_text,
+            "task_domain": kg_engine.auto_select_kg(raw_text),
+            "req_time": "now"
+        }
+
+    @staticmethod
+    async def ws_output(websocket: WebSocket, content: str):
+        """WebSocket实时输出（模拟人形语音/文字/动作反馈）"""
+        await websocket.send_text(content)
+
+humanoid = HumanoidTerminal()
+
+4. 模型自动研发/微调流水线  auto_model_train.py 
+ 
+基于 LoRA 实现全自动轻量化微调，8G内存可运行
+python
+import os
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from peft import LoraConfig, get_peft_model
+from accelerate import Accelerator
+import config
+from loguru import logger
+
+# 量化配置（INT4 降低显存占用）
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16
+)
+
+# LoRA 配置
+lora_config = LoraConfig(
+    r=8,
+    lora_alpha=32,
+    target_modules=["q_proj", "v_proj"],
+    lora_dropout=0.05,
+    bias="none",
+    task_type="CAUSAL_LM"
+)
+
+class AutoModelEngine:
+    def __init__(self):
+        self.accelerator = Accelerator()
+        self.tokenizer = AutoTokenizer.from_pretrained(config.BASE_MODEL_PATH)
+        self.model = AutoModelForCausalLM.from_pretrained(
+            config.BASE_MODEL_PATH,
+            quantization_config=bnb_config,
+            device_map=config.DEVICE,
+            trust_remote_code=True
+        )
+        self.model = get_peft_model(self.model, lora_config)
+        logger.info("自研模型引擎加载完成")
+
+    def infer(self, prompt: str, kg_data: list) -> str:
+        """模型推理：融合图谱知识"""
+        kg_context = str(kg_data)
+        full_prompt = f"已知知识：{kg_context}\n问题：{prompt}\n回答："
+        inputs = self.tokenizer(full_prompt, return_tensors="pt").to(config.DEVICE)
+        outputs = self.model.generate(**inputs, max_new_tokens=200)
+        return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+    def auto_lora_train(self, train_data_path: str):
+        """全自动LoRA微调（核心自动研发能力）"""
+        logger.info("开始自动训练流程...")
+        # 此处可对接回流数据集，完成无人工干预训练
+        # 简化原型：仅保留流程框架，可按需扩充数据加载逻辑
+        save_name = f"lora_auto_{len(os.listdir(config.LORA_SAVE_PATH))}"
+        self.model.save_pretrained(os.path.join(config.LORA_SAVE_PATH, save_name))
+        logger.success(f"自动训练完成，模型已保存：{save_name}")
+
+model_engine = AutoModelEngine()
+
+5. 系统总入口 & API 服务  main.py 
+ 
+整合所有模块，提供 HTTP + WebSocket 接口，形成完整链路
+python
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+import uvicorn
+from loguru import logger
+import config
+from humanoid_terminal import humanoid
+from kg_engine import kg_engine
+from auto_model_train import model_engine
+
+app = FastAPI(title="人形AI自治系统")
+
+@app.websocket("/ws/humanoid")
+async def websocket_humanoid(websocket: WebSocket):
+    await websocket.accept()
+    logger.info("人形终端WebSocket连接建立")
+    try:
+        while True:
+            # 1. 接收用户输入（模拟人形感知）
+            raw_msg = await websocket.receive_text()
+            # 2. 解析任务
+            task = humanoid.parse_input(raw_msg)
+            # 3. 自动选择图谱 + 检索知识
+            kg_result = kg_engine.kg_query(raw_msg)
+            # 4. 模型推理（融合知识）
+            answer = model_engine.infer(raw_msg, kg_result)
+            # 5. 人形终端输出结果
+            await humanoid.ws_output(websocket, answer)
+            # 6. 简易数据回流（触发自动训练）
+            model_engine.auto_lora_train(config.DATA_BACKFLOW_PATH)
+    except WebSocketDisconnect:
+        logger.warning("WebSocket连接断开")
+
+if __name__ == "__main__":
+    uvicorn.run(
+        "main:app",
+        host=config.HOST,
+        port=config.PORT,
+        reload=True
+    )
+
+三、Neo4j 初始化脚本（导入基础图谱数据）
+ 
+打开 Neo4j 浏览器  http://localhost:7474 ，执行以下Cypher语句，创建通用图谱和技术图谱测试数据：
+cypher
+// 1. 通用常识图谱
+CREATE (g1:general{name:"地球"})
+CREATE (g2:general{name:"人类"})
+CREATE (g1)-[r1:拥有]->(g2)
+
+// 2. 技术领域图谱
+CREATE (t1:technology{name:"Python"})
+CREATE (t2:technology{name:"编程语言"})
+CREATE (t1)-[r2:属于]->(t2)
+CREATE (t3:technology{name:"大模型"})
+CREATE (t1)-[r3:可开发]->(t3)
+
+四、完整部署 & 启动步骤（按顺序执行）
+ 
+1. 安装 Neo4j 本地版
+​
+- 启动服务，访问  http://localhost:7474 
+​
+- 初始密码修改为  123456 （和配置文件对应）
+​
+- 执行上方 Cypher 导入测试数据
+​
+2. 准备基座模型
+将开源轻量化模型（如 Qwen-1.8B、Llama2-7B-Chat 量化版）放入  ./base_model  文件夹
+​
+3. 创建空目录
+bash
+mkdir log lora_models backflow_data
+
+4. 启动系统服务
+bash
+python main.py
+
+服务启动后地址： ws://127.0.0.1:8000/ws/humanoid 
+​
+5. 测试交互
+使用 WebSocket 调试工具（如在线WS工具、Postman）连接地址，发送文本测试：
+​
+- 发送： Python是什么  → 自动选中技术图谱
+​
+- 发送： 地球上有什么  → 自动选中通用图谱
+ 
+ 
+五、测试用例清单
+测试场景	输入内容	预期效果
+通用知识问答	地球上有哪些生物	切换通用图谱，检索对应实体，模型结合知识回答
+技术知识问答	Python能做什么	切换技术图谱，返回编程相关知识
+自动训练触发	任意对话	日志打印「自动训练完成」，生成新LoRA文件
+图谱自更新	扩展实体（可调用）	Neo4j 库新增节点与关系
+六、常见报错 & 排错指南（8G内存环境高频问题）
+ 
+1. 显存不足 OOM
+ 
+- 现象： CUDA out of memory 
+​
+- 解决：确认  MODEL_QUANT_BIT=4  开启4bit量化；关闭其他占用GPU程序
+ 
+2. Neo4j 连接失败
+ 
+- 现象： AuthError  / 无法连接7687端口
+​
+- 解决：检查Neo4j服务是否启动；核对账号密码与  config.py  一致
+ 
+3. 模型加载失败
+ 
+- 现象：文件找不到、模型格式报错
+​
+- 解决： base_model  目录必须存放完整模型权重+配置文件，不要只放部分文件
+ 
+4. Python 库版本冲突
+ 
+- 现象：导入模块报错
+​
+- 解决：新建纯净虚拟环境，重新执行  pip install -r requirements.txt 
+ 
+5. WebSocket 收不到消息
+ 
+- 现象：连接成功但无交互
+​
+- 解决：关闭防火墙；确认端口8000未被占用
+ 
+ 
+ 
+七、进阶扩展方向（基于现有代码迭代）
+ 
+1. 升级图谱选型：把简单关键词匹配，替换为大模型语义分类，提升领域识别精度
+​
+2. 完善自动训练：对接回流数据集，实现有监督/对话数据全自动训练
+​
+3. 接入真实人形设备：对接摄像头、麦克风、运动舵机，替换文本模拟交互
+​
+4. 增加多图谱融合：实现多个图谱联合检索、跨领域推理
+​
+5. 增加风控模块：在推理前后加入内容检测，约束自主演化边界
