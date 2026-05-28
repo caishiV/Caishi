@@ -1,0 +1,13 @@
+ai_autonomous_system/
+├── config.py                # 全局配置（常量、路径、账号）
+├── kg_engine.py             # 知识图谱模块：选型/检索/增删改查
+├── auto_model.py            # 模型推理 + 自动LoRA训练模块
+├── humanoid_io.py           # 人形终端：多模态输入解析、输出封装
+├── data_backflow.py         # 数据回流模块：日志采集、训练数据集构建
+├── main_server.py           # 统一服务入口（FastAPI + WebSocket）
+├── utils.py                 # 公共工具函数（日志、校验、工具方法）
+├── requirements.txt         # 依赖清单
+├── log/                     # 日志文件夹
+├── lora_models/             # 存放自动训练的LoRA权重
+├── backflow_data/           # 回流对话数据
+└── base_model/             # 基座大模型目录
