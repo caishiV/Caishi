@@ -1,0 +1,51 @@
+MIT License
+
+Copyright (c) 2025 人形AI自治系统 (Humanoid AI Autonomous System)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+协议说明:
+ 
+开源协议
+ 
+本项目基于 MIT 开源协议 开源。
+ 
+协议简述
+ 
+1. 权限
+​
+- 允许个人、企业免费使用、复制、修改、合并、分发、商用本项目代码
+​
+- 允许基于本项目进行二次开发、闭源衍生、产品化发布
+​
+2. 约束
+​
+- 二次分发、二次开发、商用发布时，必须保留原始版权声明与 MIT 协议文本
+​
+3. 免责
+​
+- 本软件按「现状」提供，作者不承担任何因使用本代码产生的硬件故障、数据损失、法律纠纷、系统风险等相关责任。
+ 
+附加使用须知
+ 
+1. 本项目为技术原型 Demo，仅用于人工智能、知识图谱、大模型应用相关学习、研究、技术验证。
+​
+2. 禁止将本项目用于非法场景、违规服务、危害公共安全的场景。
+​
+3. 项目依赖的第三方组件（PyTorch、Transformers、Neo4j、开源大模型等）请遵守其各自对应的开源协议。
