@@ -1,0 +1,21 @@
+1. 在项目根目录新建 LICENSE 文件，粘贴你选择的协议全文；
+​
+2. 在  README.md  末尾追加对应「协议简述+附加须知」；
+​
+3. 项目整体文件清单更新：
+plaintext
+ai_autonomous_system/
+├── LICENSE              # 开源协议文件
+├── README.md
+├── requirements.txt
+├── config.py
+├── utils.py
+├── kg_engine.py
+├── humanoid_io.py
+├── data_backflow.py
+├── auto_model.py
+├── main_server.py
+├── log/
+├── lora_models/
+├── backflow_data/
+└── base_model/
