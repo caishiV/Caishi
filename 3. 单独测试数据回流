@@ -1,0 +1,4 @@
+from data_backflow import backflow
+
+backflow.save_interaction("测试问题", "测试回答", "general")
+print(backflow.get_train_samples())
