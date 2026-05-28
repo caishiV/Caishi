@@ -1,0 +1,8 @@
+from kg_engine import kg_engine
+
+# 自动选库 + 查询
+print(kg_engine.auto_select_kg_type("Python可以做什么"))
+print(kg_engine.query_kg("Python"))
+
+# 新增知识
+kg_engine.add_kg_entity("AI模型", "依赖", "Python", "technology")
