@@ -1,0 +1,7 @@
+1. kg_engine：可接入大模型语义分类，替换关键词规则，提升领域识别精度
+​
+2. auto_model：补充完整 DataLoader、训练循环、学习率调度，强化自动训练能力
+​
+3. humanoid_io：对接  OpenCV/PyAudio ，接入摄像头、麦克风实现真实多模态人形
+​
+4. data_backflow：增加数据清洗、去重、格式转换，适配主流微调数据集格式
